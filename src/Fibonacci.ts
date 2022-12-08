@@ -1,3 +1,16 @@
+const cache: bigint[][] = [];
+
+function setCache(key: bigint, value: bigint) {
+  cache.push([key, value]);
+}
+
+function findCache(key: bigint) {
+  const res = cache.find((x) => { return x[0] === key; });
+  if (res != null)
+    return res[1];
+  return undefined;
+}
+
 function ilog2(value: bigint) {
   let result = 0n, i, v;
   for (i = 1n; value >> (1n << i); i <<= 1n);
@@ -38,8 +51,13 @@ function powerMat(A: bigint[][], n: bigint) {
 }
 
 export function getIthFibonacci(i: bigint): bigint {
+  const res = findCache(i);
+  if (res != null)
+    return res;
   const T = [[1n,1n],[1n,0n]];
-  return matDot(powerMat(T, i), [1n,0n])[0]
+  const newRes = matDot(powerMat(T, i), [1n,0n])[0]
+  setCache(i, newRes);
+  return newRes;
 }
 
 export function getLBIndexOfFibonacci(n: bigint): bigint {

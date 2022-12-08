@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [input, setInput] = useState<string>("");
@@ -17,21 +18,21 @@ export default function Home() {
   </div>
     </div>
     <div id="tasks" className="my-5">
-      <a id="task" href={`/find-number?n=${input}`} className="flex justify-between items-center border-b border-slate-200 py-3 px-2 border-l-4 hover:border-l-indigo-300 hover:bg-gradient-to-r from-indigo-100 to-transparent hover:from-indigo-200">
+      <Link id="task" to={`find-number?n=${input}`} className="flex justify-between items-center border-b border-slate-200 py-3 px-2 border-l-4 hover:border-l-indigo-300 hover:bg-gradient-to-r from-indigo-100 to-transparent hover:from-indigo-200">
         <div className="inline-flex items-center space-x-2">
             <div>Find n-th fibonacci number</div>
         </div>
-      </a>
-      <a id="task" href={`/find-index?n=${input}`} className="flex justify-between items-center border-b border-slate-200 py-3 px-2 border-l-4 hover:border-l-indigo-300 hover:bg-gradient-to-r from-indigo-100 to-transparent hover:from-indigo-200">
+      </Link>
+      <Link id="task" to={`find-index?n=${input}`} className="flex justify-between items-center border-b border-slate-200 py-3 px-2 border-l-4 hover:border-l-indigo-300 hover:bg-gradient-to-r from-indigo-100 to-transparent hover:from-indigo-200">
         <div className="inline-flex items-center space-x-2">
             <div>Determine which term in fibonacci sequence is n</div>
         </div>
-      </a>
-      <a id="task" href={`/find-encode?n=${input}`} className="flex justify-between items-center border-b border-slate-200 py-3 px-2 border-l-4 hover:border-l-indigo-300 hover:bg-gradient-to-r from-indigo-100 to-transparent hover:from-indigo-200">
+      </Link>
+      <Link id="task" to={`find-encode?n=${input}`} className="flex justify-between items-center border-b border-slate-200 py-3 px-2 border-l-4 hover:border-l-indigo-300 hover:bg-gradient-to-r from-indigo-100 to-transparent hover:from-indigo-200">
         <div className="inline-flex items-center space-x-2">
             <div>Express n as a sum of distinct fibonacci numbers</div>
         </div>
-      </a>
+      </Link>
     </div>
   </>;
 }

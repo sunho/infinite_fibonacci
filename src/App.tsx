@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  BrowserRouter, Route, Link, Routes 
+  BrowserRouter, Route, Link, Routes, HashRouter 
 } from "react-router-dom";
 import FindEncode from './pages/FindEncode';
 import FindIndex from './pages/FindIndex';
@@ -16,14 +16,14 @@ function App() {
                   <h1 className="text-3xl font-medium">Infinite Fibonacci</h1>
               </div>
           </div>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/find-number" element={<FindNumber/>}/>
-              <Route path="/find-index" element={<FindIndex/>}/>
-              <Route path="/find-encode" element={<FindEncode/>}/>
-            </Routes>
-          </BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/find-number" element={<FindNumber/>}/>
+                <Route path="/find-index" element={<FindIndex/>}/>
+                <Route path="/find-encode" element={<FindEncode/>}/>
+              </Routes>
+            </BrowserRouter>
       </div>
     </div>
   );
