@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/infinite_fibonacci/static/css/main.e7b86216.css",
-    "main.js": "/infinite_fibonacci/static/js/main.389aa019.js",
+    "main.js": "/infinite_fibonacci/static/js/main.654ad37c.js",
     "index.html": "/infinite_fibonacci/index.html",
     "main.e7b86216.css.map": "/infinite_fibonacci/static/css/main.e7b86216.css.map",
-    "main.389aa019.js.map": "/infinite_fibonacci/static/js/main.389aa019.js.map"
+    "main.654ad37c.js.map": "/infinite_fibonacci/static/js/main.654ad37c.js.map"
   },
   "entrypoints": [
     "static/css/main.e7b86216.css",
-    "static/js/main.389aa019.js"
+    "static/js/main.654ad37c.js"
   ]
 }
